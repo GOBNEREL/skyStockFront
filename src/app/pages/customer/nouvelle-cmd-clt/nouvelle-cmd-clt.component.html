@@ -1,0 +1,87 @@
+<div class="col">
+    <div class="col-md-12 ">
+        <div class="col-md-12 mx-3 pt-2">
+            <h2>New customer order</h2>
+        </div>
+
+        <div class="col-md-12">
+            <div class="row custom-border m-3 p-3">
+                <div class="col-md-12">
+                    <form #addForm="ngForm" (ngSubmit)="onAddCmdClt(addForm)">
+                        <div class="form-row row">
+                            <div class="col form-group">
+                                <input type="text" ngModel name="code" class="form-control" placeholder="Order code">
+                            </div>
+    
+                            <div class="col form-group">
+                                <input type="date" ngModel name="dateCommande" class="form-control" placeholder="Date">
+                            </div>
+    
+                            <div class="col form-group">
+                                <select ngModel name="client" class="form-control form-select">
+                                    <option>Select a customer</option>
+                                    <option *ngFor="let customer of customers">{{customer.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 text-center mt-4">
+                            <button class="btn btn-danger mx-5">
+                                <i class="fas fa-ban"></i>&nbsp; Cancel
+                            </button>
+                            
+                            <button class="btn btn-primary" id="add-article-form" type="submit">
+                                <i class="fas fa-save"></i>&nbsp; Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="row p-3 custom-border m-3 text-center">
+        <form #addForm="ngForm" (ngSubmit)="onAddLigneCmdClt(addForm)">
+            <div class="form-row row">
+                <div class="col">
+                    <select ngModel name="article" class="form-control form-select">
+                        <option>Select an article</option>
+                        <option *ngFor="let article of articles">{{article.name}}</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <input type="text" ngModel name="quantiter" class="form-control" placeholder="Quantity">
+                </div>
+                <div class="col">
+                    <input type="text" ngModel name="prixunitaire" class="form-control" placeholder="Unit price">
+                </div>
+                <!-- <div class="col" *ngFor="let supplier of suppliers">
+                    <input type="number" [value]="supplier.id" ngModel name="commandeFournisseur" class="form-control" placeholder="commandeFournisseur">
+                </div> -->
+
+                <div class="col form-group">
+                    <select ngModel name="commandeClient" class="form-control form-select">
+                        <option>Select a customer</option>
+                        <option *ngFor="let customer of customers">{{customer.name}}</option>
+                    </select>
+                </div>
+                
+                <div class="col">
+                    <button id="add-article-form" class="btn btn-success" style="width: 100px;" type="submit">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row p-3 custom-border mx-5" style="max-height: 265px; overflow-y: scroll;">
+        <app-detail-cmd-clt></app-detail-cmd-clt>
+    </div>
+    <div class="row p-2 custom-border mx-5 text-end">
+        <h3>Total:</h3>
+    </div>
+
+    
+</div>

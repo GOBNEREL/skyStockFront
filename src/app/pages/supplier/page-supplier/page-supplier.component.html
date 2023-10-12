@@ -1,0 +1,16 @@
+<div class="col">
+    <div class="row m-3">
+        <div class="col-md-8 p-0">
+            <h1>List of suppliers</h1>
+        </div>
+
+        <div class="col-md-4 text-right">
+            <app-boutton-action (clickEvent)="newSupplier()"></app-boutton-action>
+        </div>
+    </div>
+
+    <div class="col mx-4 mb-2" style="max-height: 550px; overflow-y: scroll;">
+        <app-detail-supplier></app-detail-supplier>
+    </div>
+
+</div>

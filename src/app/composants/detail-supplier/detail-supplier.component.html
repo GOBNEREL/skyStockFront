@@ -1,0 +1,56 @@
+<div class="row mb-2 mx-4 custom-border" *ngFor="let supplier of suppliers">
+    <div class="col-md-3 border-right">
+        <div class="col pt-2">
+            <div class="row">            
+                <div class="col-md-11">
+                    <h6><strong>Name:</strong> {{supplier.name}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Details article -->
+    <div class="col-md-3 border-right m-0">
+        <div class="col pt-2">
+            <div class="row">
+                <div class="col-md-11">
+                    <h6><strong>Phone number:</strong> {{supplier.numTel}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Details Categorie -->
+    <div class="col-md-3 m-0 border-right">
+        <div class="row pt-2">
+            <div class="col-md-2">
+                <i class="fas fa-flag-checkered blue-color"></i>
+            </div>
+
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> {{supplier.description}} </h5> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons action -->
+    <div class="col-md-3 m-0">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" (click)="modifySupplier()" class="btn btn-link pt-2">
+                    <i class="fas fa-pencil-alt"></i>&nbsp; Modify
+                </button>
+            </div>
+
+            <div class="col-md-6">
+                <button type="button" class="btn btn-link pt-2" (click)="onDeleteSupplier(supplier.id)">
+                    <i class="fas fa-trash-alt"></i>&nbsp; Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

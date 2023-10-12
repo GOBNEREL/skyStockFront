@@ -1,0 +1,72 @@
+<div class="row mb-1 mx-4 custom-border" *ngFor="let article of articles">
+    <div class="col-md-1 border-right p-1 text-center">
+        <img src="assets/thirdweb.png" alt="image" width="85px" height="85px">
+    </div>
+    
+    <!-- Details article -->
+    <div class="col-md-5 border-right m-0">
+        <div class="col pt-2">
+            <div class="row">
+                <div class="col-md-1">
+                    <i class="fas fa-info-circle blue-color"></i>
+                </div>                
+                <div class="col-md-11">
+                    <h6>Code: {{article.code}}</h6>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-1">
+                    <i class="fas fa-info-circle blue-color"></i>
+                </div>                
+                <div class="col-md-11">
+                    <h6>Name: {{article.name}}</h6>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1">
+                    <i class="fas fa-dollar-sign blue-color"></i>
+                </div>                
+                <div class="col-md-11">
+                    <h6>Price: {{article.price}} frs</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- Details Categorie -->
+    <div class="col-md-3 m-0 border-right">
+        <div class="row pt-4">
+            <div class="col-md-2">
+                <i class="fas fa-flag-checkered blue-color"></i>
+            </div>
+
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5> {{article.category}} </h5> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons action -->
+    <div class="col-md-3 m-0">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" (click)="modifyArticle()" class="btn btn-link pt-4">
+                    <i class="fas fa-pencil-alt"></i>&nbsp; Modify
+                </button>
+            </div>
+
+            <div class="col-md-6">
+                <button type="button" class="btn btn-link pt-4" (click)="onDeleteArticle(article.id)">
+                    <i class="fas fa-trash-alt"></i>&nbsp; Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

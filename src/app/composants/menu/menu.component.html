@@ -1,0 +1,19 @@
+<div class="accordion">
+    <div class="dash"></div>
+    <div class="menu" *ngFor="let menu of menuProperties">
+        <div class="item form-select" [class.open]="isOpen">
+            <a class="sub-btn" (click)="toggleSubMenu(menu)">
+                <i class="{{menu.icon}}"></i>
+                {{menu.titre}}
+            </a>
+
+        </div>
+        
+        <div class="sub-menu" *ngIf="isOpen && activeMenuItem === menu">
+            <li class="sub-item" *ngFor="let subMenuItem of menu.sousMenu" (click)="selectMenuItem(subMenuItem)">
+                <i class="{{subMenuItem.icon}}"></i>
+                <a href="javascript:void(0)" (click)="navigate(subMenuItem)">{{subMenuItem.titre}}</a>
+            </li>
+        </div>
+    </div>
+</div>

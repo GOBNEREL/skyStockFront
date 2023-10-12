@@ -1,0 +1,45 @@
+<div class="row mb-2 mr-1 custom-border" *ngFor="let ligneCmdClt of ligneCmdClts">
+    <div class="col-md-3 border-right pt-2 text-center">
+        <div class="col-md-11">{{ligneCmdClt.article}}</div>
+    </div>
+    
+    <!-- Details article -->
+    <div class="col-md-2 border-right m-0 pt-2 text-center">
+        <div class="col">
+            <div class="row">            
+                <div class="col-md-11">{{ligneCmdClt.quantiter}}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2 border-right m-0 pt-2 text-center">
+        <div class="col">
+            <div class="row">            
+                <div class="col-md-11">{{ligneCmdClt.prixunitaire}} FCFA</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Details Commande -->
+    <div class="col-md-2 m-0 border-right text-center">
+        <div class="col pt-2">
+            <div class="row">              
+                <div class="col-md-11">{{ligneCmdClt.prixunitaire * ligneCmdClt.quantiter}} FCFA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons action -->
+    <div class="col-md-3 m-0">
+        <div class="row text-center mx-2">
+            <div class="col-md-6 text-center mx-5">
+                <button type="button"  class="btn btn-link" (click)="onDeleteLigneCmdClt(ligneCmdClt.id)" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-trash-alt blue-color"></i>&nbsp;
+                    Remove
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- (click)="onCorrectionDeStock()" -->

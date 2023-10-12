@@ -1,0 +1,69 @@
+.dash{
+    margin-top: 50px;
+}
+
+.menu {
+    width: 100%;
+    margin-top: 0px;
+}
+
+.menu .item {
+    position: relative;
+    cursor: pointer;
+    // list-style-type: none;
+}
+
+.menu .item:hover {
+    background-color: #eff2f5;
+}
+
+.menu .item a {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 20px;
+    line-height: 50px;
+}
+
+.menu .sub-menu li {
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 30px;
+    line-height: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.menu .sub-menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu .sub-menu li:hover {
+    background-color: #eff2f5;
+}
+
+.item .sub-menu:hover{
+    background-color: #eff2f5;
+}
+
+.item .sub-menu {
+    // display: none;
+    list-style-type: none;
+}
+
+.open {
+    display: block !important;
+}
+
+.item a .dropdown {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    transition: 0.3s ease;
+    font-size: 23px;
+}

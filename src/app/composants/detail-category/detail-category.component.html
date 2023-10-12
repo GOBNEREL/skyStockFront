@@ -1,0 +1,49 @@
+<div class="row mb-2 mx-4 custom-border" *ngFor="let category of categories">
+    <div class="col-md-3 border-right p-1 text-center">
+        <div class="row pt-2 ml-2">
+            <div class="col-md-1">
+                <i class="fas fa-info-circle blue-color"></i>
+            </div>                
+            <div class="col-md-5">
+                <h6>Code: {{category.code}}</h6>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Details article -->
+    <div class="col-md-5 border-right m-0">
+        <div class="col pt-2">
+            <div class="row">
+                <div class="col-md-1">
+                    <i class="fas fa-info-circle blue-color"></i>
+                </div>                
+                <div class="col-md-11">
+                    <h6>Name: {{category.name}}</h6>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Buttons action -->
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4 px-3">
+                <button type="button" (click)="modifyCategory()" class="btn btn-link pt-2">
+                    <i class="fas fa-pencil-alt"></i>&nbsp; Modify
+                </button>
+            </div>
+
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link pt-2" (click)="onDeleteCategory(category.id)">
+                    <!-- <i class="fas fa-trash-alt"></i>&nbsp; Delete -->
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-link pt-2" (click)="onDeleteCategory(category.id)">
+                    <i class="fas fa-trash-alt"></i>&nbsp; Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

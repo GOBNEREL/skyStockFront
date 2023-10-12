@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eff2f5 !important;
+}
+
+.background-grey {
+    background-color: #eff2f5 !important;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.min-height-80 {
+    min-height: 80px !important;
+}
+
+.min-height-50 {
+    min-height: 50px !important;
+}
+
+.min-height-670 {
+    min-height: 660px !important;
+    max-height: 660px !important;
+}
+
+.border-right {
+    border-right: 1px solid gray !important;
+}
+
+.custom-border {
+    border: 1px solid gray !important;
+}
+
+.blue-color {
+    color: #037bfe;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+}

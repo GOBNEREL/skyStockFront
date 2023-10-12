@@ -1,0 +1,52 @@
+<div class="col">
+    <div class="col-md-12 mb-3">
+        <img src="assets/thirdweb.png" class="rounded-circle" width="200px" height="200px" />
+    </div>
+
+    <hr>
+
+    <div class="col-md-12 ">
+        <div class="col-md-12 mx-3">
+            <h2> 
+                <i class="fas fa-info-circle blue-color"></i>&nbsp; Modify supplier
+            </h2>
+        </div>
+
+        <div class="col-md-12">
+            <form class="m-3" #addForm="ngForm" (ngSubmit)="onAddSupplier(addForm)">
+                <div class="row mb-5">
+                    <div class="col">
+                        <input type="text" ngModel name="code" class="form-control" placeholder="Article code">
+                    </div>
+                    <div class="col">
+                        <input type="text" ngModel name="name" class="form-control" placeholder="Article name">
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col">
+                        <input type="text" ngModel name="category" class="form-control" placeholder="Article category">
+                    </div>
+                    <div class="col">
+                        <input type="text" ngModel name="price" class="form-control" placeholder="Article unit price">
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col">
+                        <input type="text" ngModel name="id" class="form-control" placeholder="Id" hidden>
+                    </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-danger mx-5" (click)="pageSupplier()">
+                        <i class="fas fa-ban"></i>&nbsp; Cancel
+                    </button>
+                    
+                    <button id="add-article-form" class="btn btn-primary" type="submit">
+                        <i class="fas fa-save"></i>&nbsp; Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
