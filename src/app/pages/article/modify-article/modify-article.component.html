@@ -13,26 +13,32 @@
         </div>
 
         <div class="col-md-12">
-            <form class="m-3" #addForm="ngForm" (ngSubmit)="onAddArticle(addForm)">
+            <form class="m-3" #addForm="ngForm">
                 <div class="row mb-5">
                     <div class="col">
-                        <input type="text" ngModel name="code" class="form-control" placeholder="Article code">
+                        <input type="text" ngModel="{{art.code}}" name="code" class="form-control" placeholder="Article code">
                     </div>
                     <div class="col">
-                        <input type="text" ngModel name="name" class="form-control" placeholder="Article name">
+                        <input type="text" ngModel="{{art.name}}" name="name" class="form-control" placeholder="Article name">
                     </div>
                 </div>
                 <div class="row mb-5">
                     <div class="col">
-                        <input type="text" ngModel name="category" class="form-control" placeholder="Article category">
+                        <div class="col" >
+                            <select ngModel name="category" class="form-control form-select">
+                                <option>{{art.category}}</option>
+                                <option *ngFor="let category of categories">{{category.name}}</option>
+                            </select>
+                            
+                        </div>
                     </div>
                     <div class="col">
-                        <input type="text" ngModel name="price" class="form-control" placeholder="Article unit price">
+                        <input type="text" ngModel="{{art.price}}" name="price" class="form-control" placeholder="Article unit price">
                     </div>
                 </div>
                 <div class="row mb-5">
                     <div class="col">
-                        <input type="text" ngModel name="id" class="form-control" placeholder="Id" hidden>
+                        <input type="text" ngModel="{{art.id}}" name="id" class="form-control" placeholder="Id" hidden>
                     </div>
                 </div>
 
@@ -41,7 +47,7 @@
                         <i class="fas fa-ban"></i>&nbsp; Cancel
                     </button>
                     
-                    <button id="add-article-form" class="btn btn-primary" type="submit">
+                    <button id="add-article-form" class="btn btn-primary" (click)="onEditArticle(addForm.value)">
                         <i class="fas fa-save"></i>&nbsp; Save
                     </button>
                 </div>

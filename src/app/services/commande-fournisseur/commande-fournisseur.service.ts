@@ -20,6 +20,10 @@ export class CommandeFournisseurService {
     return this.http.post<CommandeFournisseur>(`${this.apiServerUrl}/commandeFournisseur/add`, commandeFournisseur);
   }
 
+  public updateCommandeFournisseur(commandeFournisseur: CommandeFournisseur): Observable<CommandeFournisseur> {
+    return this.http.put<CommandeFournisseur>(`${this.apiServerUrl}/commandeFournisseur/update`, commandeFournisseur);
+  }
+
   public deleteCommandeFournisseur(commandeFournisseurId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/commandeFournisseur/delete/${commandeFournisseurId}`);
   }

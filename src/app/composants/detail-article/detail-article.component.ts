@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from 'src/app/model/artricle';
 import { ArticleService } from 'src/app/services/article/article.service';
+import { TransferService } from 'src/app/services/transfer/transfer.service';
 
 @Component({
   selector: 'app-detail-article',
@@ -14,10 +15,12 @@ export class DetailArticleComponent implements OnInit {
   public articles: Article[] | undefined;
 
   constructor (private articleService: ArticleService,
+    private dataTransferService: TransferService,
     private router: Router) { }
 
   ngOnInit() {
     this.getArticles();
+    this.reloadComponent();
   }
 
   public getArticles(): void {
@@ -44,7 +47,8 @@ export class DetailArticleComponent implements OnInit {
       );
   }
 
-  modifyArticle(): void {
+  modifyArticle(article: Article): void {
+    this.dataTransferService.setData(article);
     this.router.navigate(['modifyarticle']);
   }
 
